@@ -24,4 +24,15 @@ public class MainActivityTest {
         Espresso.onView(ViewMatchers.withId(R.id.textView2))
                 .check(ViewAssertions.matches(ViewMatchers.withText("one")));
     }
+
+    // Click the button1
+    @Test
+    public void testButtonClick_Red1() {
+        // Click the button1
+        Espresso.onView(ViewMatchers.withId(R.id.button2)).perform(ViewActions.click());
+
+        // Check if the text view displays "One"
+        Espresso.onView(ViewMatchers.withId(R.id.textView2))
+                .check(ViewAssertions.matches(ViewMatchers.withText("two")));
+    }
 }
